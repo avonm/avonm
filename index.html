@@ -9,26 +9,7 @@
     </head>
     
 <body>
-    <nav class="navbar bg-dark navbar-dark">
-        <a class="navbar-brand" href="#">von Mentzer lab</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#">People</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>    
-          </ul>
-        </div>  
-      </nav>
-      <br>
+    <div data-includeHTML="menu.html"></div>
       <div class="row">
         <div class="col-1"></div>
         <div class="col-10"><h2>News</h2><hr>
@@ -38,5 +19,14 @@
         </div>
         <div class="col-1"></div>
       </div>
+
+
+      <script>
+        $(document).ready(function () {
+            $("div[data-includeHTML]").each(function () {                
+                $(this).load($(this).attr("data-includeHTML"));
+            });
+        });
+    </script>
 </body>
 </html>
